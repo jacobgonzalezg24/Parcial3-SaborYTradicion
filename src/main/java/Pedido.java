@@ -111,7 +111,7 @@ public class Pedido {
     }
 
     /**
-     * Agrega un producto al pedido. Solo se permite mientras el pedido esté PENDIENTE
+     * Agrega  producto al pedido. Solo se permite mientras el pedido esté PENDIENTE
      * y con cantidad mayor que cero. Si el producto ya estaba, suma la cantidad.
      */
     public boolean agregarDetalle(Producto producto, int cantidad) {

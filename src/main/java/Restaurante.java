@@ -162,7 +162,7 @@ public class Restaurante {
     }
 
     // ------------------------------------------------------------------
-    // Clientes (funcionalidades 2 y 10)
+    // Clientes [funcionalidades 2 y 10]
     // ------------------------------------------------------------------
 
     public boolean verificarCliente(String documento) {

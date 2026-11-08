@@ -38,7 +38,7 @@ class PedidoTest {
         assertEquals(24000, pedidoLocal.calcularTotalProductos(), 0.01);
     }
 
-    //4. Si se agrega el mismo producto se suma la cantidad
+    //4. Si se agrega el mismo producto se adiciona la cantidad
     @Test
     void agregarElMismoProductoDebeSumarLaCantidad() {
         pedidoLocal.agregarDetalle(plato, 2);

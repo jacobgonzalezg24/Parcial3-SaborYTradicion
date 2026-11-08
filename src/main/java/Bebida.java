@@ -64,7 +64,7 @@ public class Bebida extends Producto {
     }
 
     /**
-     * Volumen entre 150 y 1.500 ml. Fría: entre 0 y 10 °C. Caliente: entre 55 y 85 °C.
+     * Volumen entre 150 - 1.500 ml. Fría: entre 0 y 10 °C. Caliente: entre 55 y 85 °C.
      */
     @Override
     public boolean cumpleCondicionesCalidad() {

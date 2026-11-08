@@ -9,7 +9,7 @@ class ClienteEmpleadoTest {
     ClienteEmpleado clienteEmpleado = new ClienteEmpleado("1003", "Juan Torres", "3101234567", "juan@correo.com",
             "Avenida Bolívar # 3-12", "E002", Cargo.DOMICILIARIO);
 
-    //1. El cliente-empleado debe tener los datos de cliente y de empleado
+    //1. El cliente-empleado tiene los datos de cliente y de empleado
     @Test
     void debeTenerLosDatosCorrectos() {
         assertEquals("1003", clienteEmpleado.getDocumento());

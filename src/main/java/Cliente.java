@@ -33,7 +33,7 @@ public class Cliente extends Persona implements ICliente {
 
     /**
      * Agrega un pedido al historial del cliente.
-     * Devuelve false si el pedido es nulo o si ya existe un pedido con el mismo código.
+     * Devuelve false en caso de que el pedido es nulo o si ya existe un pedido con el mismo código.
      */
     @Override
     public boolean agregarPedidoAlHistorial(Pedido pedido) {

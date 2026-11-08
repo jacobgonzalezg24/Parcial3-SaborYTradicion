@@ -1,6 +1,6 @@
 /**
  * Persona que es cliente y empleado a la vez.
- * Java no permite extender dos clases, por eso extiende Cliente
+ * Java no deja extender dos clases, por eso extiende Cliente
  * e implementa la interfaz IEmpleado.
  */
 public class ClienteEmpleado extends Cliente implements IEmpleado {
