@@ -32,7 +32,7 @@ class ClienteTest {
         assertEquals(1, cliente.consultarPedidos().size());
     }
 
-    //4. No debe permitir dos pedidos con el mismo código en el historial
+    //4. No se puede permitir dos pedidos con el mismo código en el historial
     @Test
     void noDebePermitirPedidosConCodigoRepetido() {
         cliente.agregarPedidoAlHistorial(pedido);

@@ -49,7 +49,7 @@ public class PlatoFuerte extends Producto {
         return getPrecioBase() * 1.20;
     }
 
-    /** Peso entre 200 y 900 g, preparación entre 10 y 60 min y cocción aprobada. */
+    /** Peso entre 200 - 900 g, preparación entre 10 - 60 min y cocción aprobada. */
     @Override
     public boolean cumpleCondicionesCalidad() {
         boolean pesoValido = pesoGramos >= 200 && pesoGramos <= 900;

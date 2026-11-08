@@ -42,7 +42,7 @@ public class DetallePedido {
         this.subtotal = subtotal;
     }
 
-    /** Precio de venta del producto por la cantidad pedida. */
+    /** Precio  venta del producto por la cantidad pedida. */
     public double calcularSubtotal() {
         subtotal = producto.calcularPrecioVenta() * cantidad;
         return subtotal;

@@ -51,7 +51,7 @@ public class Postre extends Producto {
     }
 
     /**
-     * Peso entre 80 y 500 g. Con refrigeración: entre 0 y 6 °C. Sin refrigeración: entre 15 y 30 °C.
+     * Peso entre 80 - 500 g. Con refrigeración: entre 0 - 6 °C. Sin refrigeración: entre 15 y 30 °C.
      */
     @Override
     public boolean cumpleCondicionesCalidad() {

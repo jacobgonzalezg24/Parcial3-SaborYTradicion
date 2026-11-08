@@ -50,7 +50,7 @@ class BebidaTest {
         assertFalse(limonada.cumpleCondicionesCalidad());
     }
 
-    //6. Una bebida caliente debe estar entre 55 °C y 85 °C
+    //6. Una bebida caliente debe estar entre 55 °C - 85 °C
     @Test
     void bebidaCalienteDebeEstarEntre55y85Grados() {
         Bebida cafe = new Bebida("B02", "Café", "Café caliente", 4000, 8, 250, 70, TipoBebida.CALIENTE, false);
@@ -61,7 +61,7 @@ class BebidaTest {
         assertFalse(cafe.cumpleCondicionesCalidad());
     }
 
-    //7. El volumen debe estar entre 150 y 1.500 mililitros
+    //7. El volumen debe estar entre 150 - 1.500 mililitros
     @Test
     void volumenDebeEstarEntre150y1500Mililitros() {
         limonada.setVolumenMl(150);

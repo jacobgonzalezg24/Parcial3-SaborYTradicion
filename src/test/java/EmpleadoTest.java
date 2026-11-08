@@ -6,7 +6,7 @@ class EmpleadoTest {
 
     Empleado empleado = new Empleado("2001", "Laura Pérez", "3007778899", "laura@correo.com", "E001", Cargo.CAJERO);
 
-    //1. El empleado debe tener los datos correctos
+    //1. El empleado debe tener los datos adecuados
     @Test
     void empleadoDebeTenerLosDatosCorrectos() {
         assertEquals("2001", empleado.getDocumento());

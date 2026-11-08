@@ -8,7 +8,7 @@ class DetallePedidoTest {
             TipoPreparacion.ASADO, true);
     DetallePedido detalle = new DetallePedido(plato, 3);
 
-    //1. El detalle debe guardar el producto y la cantidad
+    //1. El detalle ha de guardar el producto y la cantidad
     @Test
     void detalleDebeTenerLosDatosCorrectos() {
         assertEquals("P01", detalle.getProducto().getCodigo());
