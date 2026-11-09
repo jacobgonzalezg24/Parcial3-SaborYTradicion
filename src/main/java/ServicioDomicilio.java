@@ -1,4 +1,4 @@
-public abstract class ServicioDomicilio {
+public abstract class ServicioDomicilio implements IServicioDomicilio {
 
     private String nombre;
     private double distanciaMaximaKm;
@@ -41,6 +41,7 @@ public abstract class ServicioDomicilio {
     }
 
     /** La empresa acepta recorridos mayores que 0 y hasta su distancia máxima. */
+    @Override
     public boolean aceptaDistancia(double distanciaKm) {
         return distanciaKm > 0 && distanciaKm <= distanciaMaximaKm;
     }
@@ -49,11 +50,13 @@ public abstract class ServicioDomicilio {
      * Procedimiento común para solicitar el servicio a cualquier empresa.
      * Marca el servicio como aceptado solo si la distancia está permitida.
      */
+    @Override
     public boolean solicitarServicio(double distanciaKm) {
         aceptado = aceptaDistancia(distanciaKm);
         return aceptado;
     }
 
     /** Cada empresa calcula su costo con su propia tarifa. */
+    @Override
     public abstract double calcularCosto(double distanciaKm);
 }
