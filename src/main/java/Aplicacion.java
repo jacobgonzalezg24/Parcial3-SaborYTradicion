@@ -32,7 +32,6 @@ public class Aplicacion {
             System.out.println("16. Cancelar pedido");
             System.out.println("17. Consultar pedidos por estado");
             System.out.println("18. Reportes de ventas");
-            System.out.println("19. Cargar datos de ejemplo");
             System.out.println("0. Salir");
 
             System.out.print("Seleccione la opción: ");
@@ -93,9 +92,6 @@ public class Aplicacion {
                     break;
                 case 18:
                     mostrarReportes(restaurante);
-                    break;
-                case 19:
-                    cargarDatosDeEjemplo(restaurante);
                     break;
                 case 0:
                     System.out.println("Gracias por usar el sistema de " + restaurante.getNombreComercial() + ".");
@@ -787,61 +783,6 @@ public class Aplicacion {
             System.out.println("Categoría con mayores ingresos: aún no se han registrado ventas.");
         } else {
             System.out.println("Categoría con mayores ingresos: " + categoria);
-        }
-    }
-
-    // ==================================================================
-    // Datos de ejemplo (para demostrar el sistema rápidamente)
-    // ==================================================================
-
-    static void cargarDatosDeEjemplo(Restaurante restaurante) {
-        int registrados = 0;
-
-        Producto[] productos = {
-                new PlatoFuerte("P01", "Bandeja paisa", "Frijoles, arroz, carne y chicharrón",
-                        30000, 35, 600, TipoPreparacion.ASADO, true),
-                new PlatoFuerte("P02", "Trucha frita", "Trucha con patacón (peso por debajo del mínimo)",
-                        28000, 25, 150, TipoPreparacion.FRITO, true),
-                new Bebida("B01", "Limonada natural", "Limonada fría de la casa",
-                        6000, 5, 400, 5, TipoBebida.FRIA, false),
-                new Bebida("B02", "Café especial", "Café de origen con preparación especial",
-                        5000, 8, 250, 70, TipoBebida.CALIENTE, true),
-                new Postre("D01", "Tres leches", "Postre refrigerado",
-                        9000, 10, 150, 4, true),
-                new Postre("D02", "Brownie", "Brownie con helado",
-                        7000, 10, 120, 22, false)
-        };
-        for (Producto producto : productos) {
-            if (restaurante.registrarProducto(producto)) {
-                registrados++;
-            }
-        }
-
-        if (restaurante.registrarCliente(new Cliente("1001", "Ana Gómez", "3001112233",
-                "ana@correo.com", "Calle 10 # 5-20"))) {
-            registrados++;
-        }
-        if (restaurante.registrarCliente(new Cliente("1002", "Carlos Ruiz", "3004445566",
-                "carlos@correo.com", "Carrera 14 # 8-31"))) {
-            registrados++;
-        }
-
-        if (restaurante.registrarEmpleado(new Empleado("2001", "Laura Pérez", "3007778899",
-                "laura@correo.com", "E001", Cargo.CAJERO))) {
-            registrados++;
-        }
-        ClienteEmpleado juan = new ClienteEmpleado("1003", "Juan Torres", "3101234567",
-                "juan@correo.com", "Avenida Bolívar # 3-12", "E002", Cargo.DOMICILIARIO);
-        if (restaurante.registrarEmpleado(juan) && restaurante.registrarCliente(juan)) {
-            registrados++;
-        }
-
-        if (registrados > 0) {
-            System.out.println("Datos de ejemplo cargados (" + registrados + " registros nuevos).");
-            System.out.println("Los productos P01, B01, B02, D01 y D02 cumplen calidad; P02 (Trucha frita) es rechazado.");
-            System.out.println("Clientes: 1001 (Ana), 1002 (Carlos) y 1003 (Juan, también empleado E002).");
-        } else {
-            System.out.println("Los datos de ejemplo ya estaban cargados.");
         }
     }
 
