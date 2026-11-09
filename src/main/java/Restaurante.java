@@ -102,9 +102,9 @@ public class Restaurante {
         this.listaServiciosDomicilio = listaServiciosDomicilio;
     }
 
-    // ------------------------------------------------------------------
+
     // Productos (funcionalidades 1, 3, 4 y 5)
-    // ------------------------------------------------------------------
+
 
     public boolean verificarProducto(String codigo) {
         boolean existe = false;
@@ -161,9 +161,9 @@ public class Restaurante {
         return noCumplen;
     }
 
-    // ------------------------------------------------------------------
+
     // Clientes [funcionalidades 2 y 10]
-    // ------------------------------------------------------------------
+
 
     public boolean verificarCliente(String documento) {
         boolean existe = false;
@@ -196,10 +196,8 @@ public class Restaurante {
         return null;
     }
 
-    /**
-     * Todos los pedidos realizados por un cliente (en cualquier estado).
-     * El historial confirmado del cliente se consulta con Cliente.consultarPedidos().
-     */
+
+     //Todos los pedidos realizados por un cliente (en cualquier estado). El historial confirmado del cliente se consulta con Cliente.consultarPedidos().
     public List<Pedido> consultarPedidosCliente(String documento) {
         List<Pedido> pedidosCliente = new ArrayList<>();
         for (Pedido pedido : listaPedidos) {
@@ -210,9 +208,8 @@ public class Restaurante {
         return pedidosCliente;
     }
 
-    // ------------------------------------------------------------------
     // Empleados
-    // ------------------------------------------------------------------
+
 
     public boolean verificarEmpleado(String codigoEmpleado) {
         boolean existe = false;
@@ -249,9 +246,9 @@ public class Restaurante {
         return new ArrayList<>(listaEmpleados);
     }
 
-    // ------------------------------------------------------------------
+
     // Pedidos (funcionalidades 6, 8, 9 y 11)
-    // ------------------------------------------------------------------
+
 
     public boolean verificarPedido(String codigo) {
         boolean existe = false;
@@ -379,9 +376,7 @@ public class Restaurante {
         return pedidosEstado;
     }
 
-    // ------------------------------------------------------------------
     // Domicilios (funcionalidad 7)
-    // ------------------------------------------------------------------
 
     public ServicioDomicilio buscarServicioDomicilio(String nombre) {
         for (ServicioDomicilio servicio : listaServiciosDomicilio) {
@@ -392,10 +387,9 @@ public class Restaurante {
         return null;
     }
 
-    /**
-     * Solicita el domicilio de un pedido a la empresa indicada. Funciona igual para
-     * cualquier empresa porque usa el procedimiento común de ServicioDomicilio.
-     */
+
+     // Solicita el domicilio de un pedido a la empresa indicada. Funciona igual para cualquier empresa porque usa el procedimiento común de ServicioDomicilio.
+
     public boolean solicitarDomicilio(String codigoPedido, String nombreServicio, double distanciaKm) {
         boolean solicitado = false;
         Pedido pedido = buscarPedido(codigoPedido);
@@ -406,12 +400,10 @@ public class Restaurante {
         return solicitado;
     }
 
-    // ------------------------------------------------------------------
-    // Reportes de ventas (funcionalidad 12)
-    // Solo cuentan los pedidos CONFIRMADOS o ENTREGADOS.
-    // ------------------------------------------------------------------
+    // Reportes de ventas (funcionalidad 12) Solo cuentan los pedidos CONFIRMADOS o ENTREGADOS.
 
-    /** Ingresos propios del restaurante: solo productos, sin el valor de los domicilios. */
+
+    // Ingresos propios del restaurante: solo productos, sin el valor de los domicilios
     public double calcularIngresosRestaurante() {
         double ingresos = 0;
         for (Pedido pedido : listaPedidos) {
@@ -422,7 +414,7 @@ public class Restaurante {
         return ingresos;
     }
 
-    /** Valores cobrados por domicilios, que se muestran aparte de los ingresos del restaurante. */
+    // Valores cobrados por domicilios, que se muestran aparte de los ingresos del restaurante.
     public double calcularIngresosDomicilios() {
         double ingresos = 0;
         for (Pedido pedido : listaPedidos) {
@@ -433,7 +425,7 @@ public class Restaurante {
         return ingresos;
     }
 
-    /** Producto con más unidades vendidas, o null si todavía no hay ventas. */
+    // Producto con más unidades vendidas, o null si todavía no hay ventas.
     public Producto obtenerProductoMasVendido() {
         Producto masVendido = null;
         int maxUnidades = 0;
@@ -461,9 +453,9 @@ public class Restaurante {
         return mayor;
     }
 
-    // ------------------------------------------------------------------
-    // Métodos auxiliares privados (no hace falta dibujarlos en el diagrama)
-    // ------------------------------------------------------------------
+
+    // Métodos auxiliares privados
+
 
     private boolean esPedidoContable(Pedido pedido) {
         return pedido.getEstado() == EstadoPedido.CONFIRMADO || pedido.getEstado() == EstadoPedido.ENTREGADO;

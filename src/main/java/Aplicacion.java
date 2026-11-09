@@ -759,9 +759,6 @@ public class Aplicacion {
         System.out.println("     TOTAL: " + dinero(pedido.calcularTotal()));
     }
 
-    // ==================================================================
-    // Reportes (funcionalidad 12)
-    // ==================================================================
 
     static void mostrarReportes(Restaurante restaurante) {
         System.out.println("----Reportes de ventas (pedidos confirmados y entregados)----");
